@@ -126,6 +126,9 @@ export default function Lista() {
 
   const [medicineName, setMedicineName] = useState('');
   const [medicineTime, setMedicineTime] = useState('');
+  const [medicineDosage, setMedicineDosage] = useState('');
+  const [medicineFrequency, setMedicineFrequency] = useState('');
+  const [medicinePeriod, setMedicinePeriod] = useState('');
 
   const [detailVisible, setDetailVisible] = useState(false);
   const [selectedMedicine, setSelectedMedicine] = useState(null);
@@ -141,6 +144,9 @@ export default function Lista() {
       id: Date.now().toString(),
       name: medicineName,
       time: medicineTime,
+      dosage: medicineDosage,
+      frequency: medicineFrequency,
+      period: medicinePeriod,
       taken: false,
     };
 
@@ -148,6 +154,9 @@ export default function Lista() {
 
     setMedicineName('');
     setMedicineTime('');
+    setMedicineDosage('');
+    setMedicineFrequency('');
+    setMedicinePeriod('');
     setModalVisible(false);
   };
 
@@ -260,6 +269,27 @@ export default function Lista() {
               onChangeText={setMedicineTime}
             />
 
+            <TextInput
+              placeholder="Periodo(Ex: 2 mêses)"
+              style={styles.input}
+              value={medicinePeriod}
+              onChangeText={setMedicinePeriod}
+            />
+
+            <TextInput
+              placeholder="Frequencia (Ex: duas vezes ao dia)"
+              style={styles.input}
+              value={medicineFrequency}
+              onChangeText={setMedicineFrequency}
+            />
+
+            <TextInput
+              placeholder="Dosagem (Ex: 500ml)"
+              style={styles.input}
+              value={medicineDosage}
+              onChangeText={setMedicineDosage}
+            />
+
             <TouchableOpacity
               style={styles.saveButton}
               onPress={handleAddMedicine}
@@ -301,6 +331,18 @@ export default function Lista() {
 
                 <Text style={styles.detailText}>
                   Horário: {selectedMedicine.time}
+                </Text>
+
+                <Text style={styles.detailText}>
+                  Periodo: {selectedMedicine.period}
+                </Text>
+
+                <Text style={styles.detailText}>
+                  Dosagem: {selectedMedicine.dosage}
+                </Text>
+
+                <Text style={styles.detailText}>
+                  Frequencia: {selectedMedicine.frequency}
                 </Text>
 
                 <Text style={styles.detailText}>
