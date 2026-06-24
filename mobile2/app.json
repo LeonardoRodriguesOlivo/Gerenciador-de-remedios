@@ -20,13 +20,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.leordo.GerenciadorDeRemedios",
+      "googleServicesFile": "./android/app/google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "@react-native-firebase/app"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a6f2d24d-e10f-4b69-83e0-12885666e939"
+      }
+    }
   }
 }

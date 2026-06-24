@@ -38,4 +38,5 @@ yarn-error.*
 
 # generated native folders
 /ios
+# keep android sources + google-services.json for EAS build
 /android
